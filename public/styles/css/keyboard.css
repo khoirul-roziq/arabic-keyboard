@@ -1,0 +1,259 @@
+.keyboard {
+  width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(34, 1fr);
+  grid-template-areas: "bt bt n1 n1 n2 n2 n3 n3 n4 n4 n5 n5 n6 n6 n7 n7 n8 n8 n9 n9 n0 n0 min min es es bs bs bs bs dlt dlt dlt dlt" "tab tab tab q q w w e e r r t t y y u u i i o o p p lsb lsb rsb rsb rsb enter enter enter pu pu pu" "cl cl cl cl a a s s d d f f g g h h j j k k l l sc sc sq sq bsl bsl enter enter enter pd pd pd" "ls ls ls ls ls z z x x c c v v b b n n m m comma comma dot dot sl sl rs rs rs home home up up end end" "fn fn lctrl lctrl win win lalt lalt spc spc spc spc spc spc spc spc spc spc ralt ralt psc psc psc psc rctrl rctrl rctrl rctrl left left down down right right";
+  gap: 0.3rem;
+}
+.keyboard .key {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: linear-gradient(#444444, #0e0e0e);
+  color: white;
+  height: 3rem;
+  border-radius: 5px;
+  flex-direction: column;
+  transition: 0.1s;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+.keyboard .key:hover {
+  cursor: pointer;
+}
+.keyboard .key:active {
+  scale: 0.95;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.keyboard .key .key-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-sizing: border-box;
+}
+.keyboard .key .key-info .indicator {
+  font-size: 10px;
+  color: #909090;
+}
+.keyboard .key .key-info .second-value {
+  font-size: 14px;
+  color: #909090;
+}
+.keyboard .btn-up, .keyboard .btn-down, .keyboard .btn-left, .keyboard .btn-right {
+  background-image: linear-gradient(#094452, #020112);
+}
+.keyboard .btn-bt {
+  grid-area: bt;
+}
+.keyboard .btn-n1 {
+  grid-area: n1;
+}
+.keyboard .btn-n2 {
+  grid-area: n2;
+}
+.keyboard .btn-n3 {
+  grid-area: n3;
+}
+.keyboard .btn-n4 {
+  grid-area: n4;
+}
+.keyboard .btn-n5 {
+  grid-area: n5;
+}
+.keyboard .btn-n6 {
+  grid-area: n6;
+}
+.keyboard .btn-n7 {
+  grid-area: n7;
+}
+.keyboard .btn-n8 {
+  grid-area: n8;
+}
+.keyboard .btn-n9 {
+  grid-area: n9;
+}
+.keyboard .btn-n0 {
+  grid-area: n0;
+}
+.keyboard .btn-min {
+  grid-area: min;
+}
+.keyboard .btn-es {
+  grid-area: es;
+}
+.keyboard .btn-bs {
+  grid-area: bs;
+}
+.keyboard .btn-dlt {
+  grid-area: dlt;
+}
+.keyboard .btn-tab {
+  grid-area: tab;
+}
+.keyboard .btn-q {
+  grid-area: q;
+}
+.keyboard .btn-w {
+  grid-area: w;
+}
+.keyboard .btn-e {
+  grid-area: e;
+}
+.keyboard .btn-r {
+  grid-area: r;
+}
+.keyboard .btn-t {
+  grid-area: t;
+}
+.keyboard .btn-y {
+  grid-area: y;
+}
+.keyboard .btn-u {
+  grid-area: u;
+}
+.keyboard .btn-i {
+  grid-area: i;
+}
+.keyboard .btn-o {
+  grid-area: o;
+}
+.keyboard .btn-p {
+  grid-area: p;
+}
+.keyboard .btn-lsb {
+  grid-area: lsb;
+}
+.keyboard .btn-rsb {
+  grid-area: rsb;
+}
+.keyboard .btn-enter {
+  grid-area: enter;
+  height: 6.3rem;
+}
+.keyboard .btn-pu {
+  grid-area: pu;
+}
+.keyboard .btn-cl {
+  grid-area: cl;
+}
+.keyboard .btn-a {
+  grid-area: a;
+}
+.keyboard .btn-s {
+  grid-area: s;
+}
+.keyboard .btn-d {
+  grid-area: d;
+}
+.keyboard .btn-f {
+  grid-area: f;
+}
+.keyboard .btn-g {
+  grid-area: g;
+}
+.keyboard .btn-h {
+  grid-area: h;
+}
+.keyboard .btn-j {
+  grid-area: j;
+}
+.keyboard .btn-k {
+  grid-area: k;
+}
+.keyboard .btn-l {
+  grid-area: l;
+}
+.keyboard .btn-sc {
+  grid-area: sc;
+}
+.keyboard .btn-sq {
+  grid-area: sq;
+}
+.keyboard .btn-bsl {
+  grid-area: bsl;
+}
+.keyboard .btn-pd {
+  grid-area: pd;
+}
+.keyboard .btn-ls {
+  grid-area: ls;
+}
+.keyboard .btn-z {
+  grid-area: z;
+}
+.keyboard .btn-x {
+  grid-area: x;
+}
+.keyboard .btn-c {
+  grid-area: c;
+}
+.keyboard .btn-v {
+  grid-area: v;
+}
+.keyboard .btn-b {
+  grid-area: b;
+}
+.keyboard .btn-n {
+  grid-area: n;
+}
+.keyboard .btn-m {
+  grid-area: m;
+}
+.keyboard .btn-comma {
+  grid-area: comma;
+}
+.keyboard .btn-dot {
+  grid-area: dot;
+}
+.keyboard .btn-sl {
+  grid-area: sl;
+}
+.keyboard .btn-rs {
+  grid-area: rs;
+}
+.keyboard .btn-home {
+  grid-area: home;
+}
+.keyboard .btn-up {
+  grid-area: up;
+}
+.keyboard .btn-end {
+  grid-area: end;
+}
+.keyboard .btn-fn {
+  grid-area: fn;
+}
+.keyboard .btn-lctrl {
+  grid-area: lctrl;
+}
+.keyboard .btn-win {
+  grid-area: win;
+}
+.keyboard .btn-lalt {
+  grid-area: lalt;
+}
+.keyboard .btn-spc {
+  grid-area: spc;
+}
+.keyboard .btn-ralt {
+  grid-area: ralt;
+}
+.keyboard .btn-psc {
+  grid-area: psc;
+}
+.keyboard .btn-rctrl {
+  grid-area: rctrl;
+}
+.keyboard .btn-left {
+  grid-area: left;
+}
+.keyboard .btn-down {
+  grid-area: down;
+}
+.keyboard .btn-right {
+  grid-area: right;
+}/*# sourceMappingURL=keyboard.css.map */
