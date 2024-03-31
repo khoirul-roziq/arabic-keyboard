@@ -33,6 +33,9 @@
     <ul>
       <li><a href="/arabic">List</a></li>
       <li><a href="/arabic/<%= arabicChar.id %>/edit">Edit</a></li>
+      <form action="/arabic/<%= arabicChar.id %>?_method=DELETE" method="post">
+        <button class="btn btn-link" type="submit">Hapus</button>
+      </form>
     </ul>
 
   </div>

@@ -3,21 +3,28 @@ const arabicModel = require("../models/arabic");
 const list = async (req, res) => {
   try {
     const arabicData = await arabicModel.find();
-    res.render("arabic-list", {arabicData});
+    res.render("arabic-list", { arabicData });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-  
 };
 
 const show = async (req, res) => {
-  const id = req.params.id
-  const arabicChar = await arabicModel.findById(id)
-  res.render("arabic-show", {arabicChar});
-}
+  try {
+    const id = req.params.id;
+    const arabicChar = await arabicModel.findById(id);
+    res.render("arabic-show", { arabicChar });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 
 const create = (req, res) => {
-  res.render("arabic-create");
+  try {
+    res.render("arabic-create");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
 const store = async (req, res) => {
@@ -26,21 +33,40 @@ const store = async (req, res) => {
     await arabic.save();
     res.redirect("/arabic/arabic-list");
   } catch (error) {
-    console.error("Gagal menyimpan data Arabic:", error);
-    res.status(500).send("Gagal menyimpan data Arabic");
+    res.status(500).json({ error: error.message });
   }
 };
 
 const edit = async (req, res) => {
-  const id = req.params.id
-  const arabicChar = await arabicModel.findById(id)
-  res.render("arabic-edit", {arabicChar});
+  try {
+    const id = req.params.id;
+    const arabicChar = await arabicModel.findById(id);
+    res.render("arabic-edit", { arabicChar });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-const update = async (req,res) => {
-  const id = req.params.id
-  const arabicChar = await arabicModel.findByIdAndUpdate(id, req.body)
-  res.redirect("/arabic")
-}
+const update = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const arabicChar = await arabicModel.findByIdAndUpdate(id, req.body, {
+      runValidators: true,
+    });
+    res.redirect("/arabic");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 
-module.exports = { list, create, store, edit, update, show };
+const drop = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const arabicChar = await arabicModel.findByIdAndDelete(id);
+    res.redirect("/arabic");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+module.exports = { list, create, store, edit, update, show, drop };
