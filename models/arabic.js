@@ -11,7 +11,7 @@ const arabicSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ['tanda', 'huruf', 'angka'],
+        enum: ['harokat', 'huruf', 'angka', 'tanda', 'susunan'],
         required: [true, "Tipe harus diisi dengan 'tanda', 'huruf', atau 'angka'"]
     }
 

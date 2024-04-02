@@ -31,7 +31,7 @@ const store = async (req, res) => {
   try {
     const arabic = new arabicModel(req.body);
     await arabic.save();
-    res.redirect("/arabic/arabic-list");
+    res.redirect("/arabic");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

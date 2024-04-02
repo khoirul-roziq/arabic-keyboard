@@ -18,6 +18,7 @@ app.use(methodOverride("_method"))
 // Routing
 app.use("/", require("./routes/keyboard"));
 app.use("/arabic", require("./routes/arabic"));
+app.use("/button", require("./routes/button"))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 

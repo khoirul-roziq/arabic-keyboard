@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Form</title>
+  <style>
+    .button-data {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="keyDataForm" action="/button/store/multiple" method="post">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    let buttonData = [];
+  
+    async function fetchButtonData() {
+      try {
+        const baseUrl = window.location.origin;
+        const response = await fetch(baseUrl + '/button/get/all');
+        if (!response.ok) {
+          throw new Error('Failed to fetch button data');
+        }
+        buttonData = await response.json();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  
+    async function addButtonData(event) {
+      event.preventDefault();
+  
+      const form = document.getElementById('keyDataForm');
+      const keyInputs = form.querySelectorAll('input[name^="formData["][name$="][key]"]');
+      const keyInputsArray = Array.from(keyInputs);
+      const keyCode = event.code;
+      const key = event.key;
+  
+      if (!keyInputsArray.some(input => input.value === key) && !buttonData.some(data => data.key === key)) {
+        const div = document.createElement('div');
+        div.classList.add('button-data');
+        div.innerHTML = `
+              <label for="name${index}">Name</label>
+              <input type="text" name="formData[${index}][name]" value="${keyCode}" id="name${index}">
+              <label for="key${index}">Key</label>
+              <input type="text" name="formData[${index}][key]" value="${key}" id="key${index}">
+              <label for="code${index}">Code</label>
+              <input type="text" name="formData[${index}][code]" value="${keyCode}" id="code${index}">
+          `;
+        form.appendChild(div);
+        index++;
+      } else {
+        console.log("Key sudah terdaftar");
+      }
+    }
+  
+    let index = 0;
+  
+    document.addEventListener('DOMContentLoaded', async function() {
+      await fetchButtonData();
+    });
+  
+    document.addEventListener('keydown', addButtonData);
+
+  </script>
+  
+
+</body>
+
+</html>

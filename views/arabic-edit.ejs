@@ -15,9 +15,11 @@
             <input class="form-control mt-4" type="text" placeholder="Unicode" name="unicode" value="<%= arabicChar.unicode %>">
             <select class="form-select mt-4" name="type">
               <option>-- Pilih Tipe --</option>
-              <option value="tanda" <% if(arabicChar.type == 'tanda') { %> selected <% } %>>Tanda</option>
+              <option value="harokat" <% if(arabicChar.type == 'harokat') { %> selected <% } %>>Harokat</option>
               <option value="huruf" <% if(arabicChar.type == 'huruf') { %> selected <% } %>>Huruf</option>
               <option value="angka" <% if(arabicChar.type == 'angka') { %> selected <% } %>>Angka</option>
+              <option value="tanda" <% if(arabicChar.type == 'tanda') { %> selected <% } %>>Tanda</option>
+              <option value="susunan" <% if(arabicChar.type == 'susunan') { %> selected <% } %>>Susunan</option>
             </select>
             <button type="submit" class="btn btn-primary mt-4">Submit</button>
         </form>

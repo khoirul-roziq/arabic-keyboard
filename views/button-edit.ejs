@@ -9,18 +9,11 @@
   <body>
       
       <div class="container">
-        <h1>Tambah Data Karakter</h1>
-        <form action="/arabic/store" method="post">
-            <input class="form-control mt-4" type="text" placeholder="Nama arabic" name="name">
-            <input class="form-control mt-4" type="text" placeholder="Unicode" name="unicode">
-            <select class="form-select mt-4" name="type">
-              <option selected>-- Pilih Tipe --</option>
-              <option value="harokat">Harokat</option>
-              <option value="huruf">Huruf</option>
-              <option value="angka">Angka</option>
-              <option value="tanda">Tanda</option>
-              <option value="susunan">Susunan</option>
-            </select>
+        <h1>Edit Data Button</h1>
+        <form action="/button/<%= buttonData.id %>?_method=PUT" method="post">
+            <input class="form-control mt-4" type="text" placeholder="Nama Button" name="name" value="<%= buttonData.name %>">
+            <input class="form-control mt-4" type="text" placeholder="Key" name="key" value="<%= buttonData.key %>" disabled>
+            <input class="form-control mt-4" type="text" placeholder="Code" name="Code" value="<%= buttonData.code %>" disabled>
             <button type="submit" class="btn btn-primary mt-4">Submit</button>
         </form>
     </div>
