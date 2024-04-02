@@ -13,767 +13,162 @@
 <body>
   <div class="panel">
   </div>
-  <div class="keyboard">
-    <% buttons.forEach ((button) => { %>
-    <% if(button.code === "Backquote") { %>
-    <div class="key multi-value btn-bt">
-      <div class="key-info">
-        <span class="indicator">`</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
+  <div class="keyboard" id="keyboard">
 
-    <% if(button.code === "Digit1") { %>
-    <div class="key multi-value btn-n1">
-      <div class="key-info">
-        <span class="indicator">1</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Digit2") { %>
-    <div class="key multi-value btn-n2">
-      <div class="key-info">
-        <span class="indicator">2</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Digit3") { %>
-    <div class="key multi-value btn-n3">
-      <div class="key-info">
-        <span class="indicator">3</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Digit4") { %>
-    <div class="key multi-value btn-n4">
-      <div class="key-info">
-        <span class="indicator">4</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Digit5") { %>
-    <div class="key multi-value btn-n5">
-      <div class="key-info">
-        <span class="indicator">5</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Digit6") { %>
-    <div class="key multi-value btn-n6">
-      <div class="key-info">
-        <span class="indicator">6</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Digit7") { %>
-    <div class="key multi-value btn-n7">
-      <div class="key-info">
-        <span class="indicator">7</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Digit8") { %>
-    <div class="key multi-value btn-n8">
-      <div class="key-info">
-        <span class="indicator">8</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Digit9") { %>
-    <div class="key multi-value btn-n9">
-      <div class="key-info">
-        <span class="indicator">9</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Digit0") { %>
-    <div class="key multi-value btn-n0">
-      <div class="key-info">
-        <span class="indicator">0</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Minus") { %>
-    <div class="key multi-value btn-min">
-      <div class="key-info">
-        <span class="indicator">-</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Equal") { %>
-    <div class="key multi-value btn-es">
-      <div class="key-info">
-        <span class="indicator">=</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-      <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Backspace") { %>
-    <div class="key btn-bs">
-      <div class="main-value">Backspace</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Delete") { %>
-    <div class="key btn-dlt">
-      <div class="main-value">Delete</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Tab") { %>
-    <div class="key btn-tab">
-      <div class="main-value">Tab</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyQ") { %>
-    <div class="key multi-value btn-q">
-      <div class="key-info">
-        <span class="indicator">Q</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyW") { %>
-    <div class="key multi-value btn-w">
-      <div class="key-info">
-        <span class="indicator">W</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyE") { %>
-    <div class="key multi-value btn-e">
-      <div class="key-info">
-        <span class="indicator">E</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyR") { %>
-    <div class="key multi-value btn-r">
-      <div class="key-info">
-        <span class="indicator">R</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyT") { %>
-    <div class="key multi-value btn-t">
-      <div class="key-info">
-        <span class="indicator">T</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyY") { %>
-    <div class="key multi-value btn-y">
-      <div class="key-info">
-        <span class="indicator">Y</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyU") { %>
-    <div class="key multi-value btn-u">
-      <div class="key-info">
-        <span class="indicator">U</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyI") { %>
-    <div class="key multi-value btn-i">
-      <div class="key-info">
-        <span class="indicator">I</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyO") { %>
-    <div class="key multi-value btn-o">
-      <div class="key-info">
-        <span class="indicator">O</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyP") { %>
-    <div class="key multi-value btn-p">
-      <div class="key-info">
-        <span class="indicator">P</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "BracketLeft") { %>
-    <div class="key multi-value btn-lsb">
-      <div class="key-info">
-        <span class="indicator">[</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "BracketRight") { %>
-    <div class="key multi-value btn-rsb">
-      <div class="key-info">
-        <span class="indicator">]</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">
-        <% if (button.arabic) { %>
-        <span class="font-kitab fs-2"><%= eval('"' + button.arabic.unicode + '"') %></span>
-        <% } else { %>
-        <span class="empty">empty</span>
-        <% } %></td>
-      </div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Enter") { %>
-    <div class="key btn-enter">
-      <div class="main-value">Enter</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "PageUp") { %>
-    <div class="key btn-pu">
-      <div class="main-value">PgUp</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "CapsLock") { %>
-    <div class="key btn-cl">
-      <div class="main-value">CapsLock</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyA") { %>
-    <div class="key multi-value btn-a">
-      <div class="key-info">
-        <span class="indicator">A</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">A</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyS") { %>
-    <div class="key multi-value btn-s">
-      <div class="key-info">
-        <span class="indicator">S</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">S</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyD") { %>
-    <div class="key multi-value btn-d">
-      <div class="key-info">
-        <span class="indicator">D</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">D</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyF") { %>
-    <div class="key multi-value btn-f">
-      <div class="key-info">
-        <span class="indicator">F</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">F</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyG") { %>
-    <div class="key multi-value btn-g">
-      <div class="key-info">
-        <span class="indicator">G</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">G</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyH") { %>
-    <div class="key multi-value btn-h">
-      <div class="key-info">
-        <span class="indicator">H</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">H</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyJ") { %>
-    <div class="key multi-value btn-j">
-      <div class="key-info">
-        <span class="indicator">J</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">J</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyK") { %>
-    <div class="key multi-value btn-k">
-      <div class="key-info">
-        <span class="indicator">K</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">K</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyL") { %>
-    <div class="key multi-value btn-l">
-      <div class="key-info">
-        <span class="indicator">L</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">L</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Semicolon") { %>
-    <div class="key multi-value btn-sc">
-      <div class="key-info">
-        <span class="indicator">;</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">;</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Quote") { %>
-    <div class="key multi-value btn-sq">
-      <div class="key-info">
-        <span class="indicator">'</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">'</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Backslash") { %>
-    <div class="key multi-value btn-bsl">
-      <div class="key-info">
-        <span class="indicator">\</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">\</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "PageDown") { %>
-    <div class="key btn-pd">
-      <div class="main-value">PgDn</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "ShiftLeft") { %>
-    <div class="key btn-ls">
-      <div class="main-value">Shift</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyZ") { %>
-    <div class="key multi-value btn-z">
-      <div class="key-info">
-        <span class="indicator">Z</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">Z</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyX") { %>
-    <div class="key multi-value btn-x">
-      <div class="key-info">
-        <span class="indicator">X</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">X</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyC") { %>
-    <div class="key multi-value btn-c">
-      <div class="key-info">
-        <span class="indicator">C</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">C</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyV") { %>
-    <div class="key multi-value btn-v">
-      <div class="key-info">
-        <span class="indicator">V</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">V</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyB") { %>
-    <div class="key multi-value btn-b">
-      <div class="key-info">
-        <span class="indicator">B</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">B</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyN") { %>
-    <div class="key multi-value btn-n">
-      <div class="key-info">
-        <span class="indicator">N</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">N</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "KeyM") { %>
-    <div class="key multi-value btn-m">
-      <div class="key-info">
-        <span class="indicator">M</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">M</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Comma") { %>
-    <div class="key multi-value btn-comma">
-      <div class="key-info">
-        <span class="indicator">,</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">,</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Period") { %>
-    <div class="key multi-value btn-dot">
-      <div class="key-info">
-        <span class="indicator">.</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">.</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Slash") { %>
-    <div class="key multi-value btn-sl">
-      <div class="key-info">
-        <span class="indicator">/</span>
-        <span class="second-value">ظ</span>
-      </div>
-      <div class="main-value">/</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "ShiftRight") { %>
-    <div class="key btn-rs">
-      <div class="main-value">Shift</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Home") { %>
-    <div class="key btn-home">
-      <div class="main-value">Home</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "ArrowUp") { %>
-    <div class="key btn-up">
-      <div class="main-value">Up</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "End") { %>
-    <div class="key btn-end">
-      <div class="main-value">End</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "WakeUp") { %>
-    <div class="key btn-fn">
-      <div class="main-value">Fn</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "ControlLeft") { %>
-    <div class="key btn-lctrl">
-      <div class="main-value">Ctrl</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "") { %>
-    <div class="key btn-win">
-      <div class="main-value">Win</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "AltRight") { %>
-    <div class="key btn-lalt">
-      <div class="main-value">Alt</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "Space") { %>
-    <div class="key btn-spc">
-      <div class="main-value">Space</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "AltRight") { %>
-    <div class="key btn-ralt">
-      <div class="main-value">Alt</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "") { %>
-    <div class="key btn-psc">
-      <div class="main-value">PrtSc</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "ControlRight") { %>
-    <div class="key btn-rctrl">
-      <div class="main-value">Ctrl</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "ArrowLeft") { %>
-    <div class="key btn-left">
-      <div class="main-value">Left</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "ArrowDown") { %>
-    <div class="key btn-down">
-      <div class="main-value">Down</div>
-    </div>
-    <% } %>
-
-    <% if(button.code === "ArrowRight") { %>
-    <div class="key btn-right">
-      <div class="main-value">Right</div>
-    </div>
-    <% } %>
-    <% }) %>
   </div>
+
+  <script>
+    let buttonData = [];
+
+    async function fetchButtonData() {
+      try {
+        const baseUrl = window.location.origin;
+        const response = await fetch(baseUrl + '/button/get/all');
+        if (!response.ok) {
+          throw new Error('Failed to fetch button data');
+        }
+        buttonData = await response.json();
+
+        return buttonData;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    // Function to generate the keyboard element
+    function multiValueKeyButton(classBtn, indicatorValue, mainValue) {
+      // Get the reference to the keyboard div
+      var keyboardDiv = document.getElementById("keyboard");
+
+      // Create a new div element for the key
+      var keyDiv = document.createElement("div");
+      keyDiv.classList.add("key", "multi-value", classBtn);
+
+
+      // Create key-info div
+      var keyInfoDiv = document.createElement("div");
+      keyInfoDiv.classList.add("key-info");
+
+      // Create span for indicator
+      var indicatorSpan = document.createElement("span");
+      indicatorSpan.classList.add("indicator");
+      indicatorSpan.textContent = indicatorValue;
+
+      // Create span for second value
+      // var secondValueSpan = document.createElement("span");
+      // secondValueSpan.classList.add("second-value");
+      // secondValueSpan.textContent = "ظ";
+
+      // Append indicator and second value spans to key-info div
+      keyInfoDiv.appendChild(indicatorSpan);
+      // keyInfoDiv.appendChild(secondValueSpan);
+
+      // Create main-value div
+      var mainValueDiv = document.createElement("div");
+      mainValueDiv.classList.add("main-value", "font-kitab");
+      if(mainValue) {
+        mainValueDiv.textContent = eval('"' + mainValue + '"');
+      } else {
+        mainValueDiv.textContent = "null"
+      }
+
+      // Append key-info div and main-value div to key div
+      keyDiv.appendChild(keyInfoDiv);
+      keyDiv.appendChild(mainValueDiv);
+
+      // Append the key div to the keyboard div
+      keyboardDiv.appendChild(keyDiv);
+    }
+
+    // Function to generate the keyboard element
+    function singleValueKeyButton(classBtn, mainValue) {
+      // Get the reference to the keyboard div
+      var keyboardDiv = document.getElementById("keyboard");
+
+      // Create a new div element for the key
+      var keyDiv = document.createElement("div");
+      keyDiv.classList.add("key", classBtn);
+
+      // Create main-value div
+      var mainValueDiv = document.createElement("div");
+      mainValueDiv.classList.add("main-value");
+      mainValueDiv.textContent = mainValue;
+
+      // Append main-value div to key div
+      keyDiv.appendChild(mainValueDiv);
+
+      // Append the key div to the keyboard div
+      keyboardDiv.appendChild(keyDiv);
+    }
+
+    document.addEventListener('DOMContentLoaded', async function() {
+      const dataKeyButton = await fetchButtonData();      
+
+      dataKeyButton.forEach(element => {
+        if (element.key === "1") {
+          if(element.arabic) {
+            multiValueKeyButton("btn-n1", 1, element.arabic.unicode)
+          } else {
+            multiValueKeyButton("btn-n1", 1, null)
+          }
+        } else if (element.key === "2") {
+          if(element.arabic) {
+            multiValueKeyButton("btn-n2", 2, element.arabic.unicode)
+          } else {
+            multiValueKeyButton("btn-n2", 2, null)
+          }
+        } else if (element.key === "3") {
+          if(element.arabic) {
+            multiValueKeyButton("btn-n3", 3, element.arabic.unicode)
+          } else {
+            multiValueKeyButton("btn-n3", 3)
+          }
+        } else if (element.key === "4") {
+          if(element.arabic) {
+            multiValueKeyButton("btn-n4", 4, element.arabic.unicode)
+          } else {
+            multiValueKeyButton("btn-n4", 4)
+          }
+        } else if (element.key === "5") {
+          if(element.arabic) {
+            multiValueKeyButton("btn-n5", 5, element.arabic.unicode)
+          } else {
+            multiValueKeyButton("btn-n5", 5)
+          }
+        } else if (element.key === "6") {
+          if(element.arabic) {
+            multiValueKeyButton("btn-n6", 6, element.arabic.unicode)
+          } else {
+            multiValueKeyButton("btn-n6", 6)
+          }
+        } else if (element.key === "7") {
+          if(element.arabic) {
+            multiValueKeyButton("btn-n7", 7, element.arabic.unicode)
+          } else {
+            multiValueKeyButton("btn-n7", 7)
+          }
+        } else if (element.key === "8") {
+          if(element.arabic) {
+            multiValueKeyButton("btn-n8", 8, element.arabic.unicode)
+          } else {
+            multiValueKeyButton("btn-n8", 8)
+          }
+        } else if (element.key === "9") {
+          if(element.arabic) {
+            multiValueKeyButton("btn-n9", 9, element.arabic.unicode)
+          } else {
+            multiValueKeyButton("btn-n9", 9)
+          }
+        } else if (element.key === "0") {
+          if(element.arabic) {
+            multiValueKeyButton("btn-n0", 0, element.arabic.unicode)
+          } else {
+            multiValueKeyButton("btn-n0", 0)
+          }
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -43,7 +43,10 @@
   font-size: 14px;
   color: #909090;
 }
-.keyboard .key .empty {
+.keyboard .key .main-value .font-kitab {
+  font-size: 18px;
+}
+.keyboard .key .main-value .empty {
   font-size: 10px;
 }
 .keyboard .btn-up, .keyboard .btn-down, .keyboard .btn-left, .keyboard .btn-right {

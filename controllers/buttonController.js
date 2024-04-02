@@ -89,7 +89,7 @@ const update = async (req, res) => {
 
 const getAllButtons = async (req, res) => {
   try {
-    const buttons = await Button.find();
+    const buttons = await Button.find().populate('arabic').exec();
     res.status(200).json(buttons);
   } catch (error) {
     res.status(500).json({ error: error.message });

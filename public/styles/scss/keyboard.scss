@@ -53,9 +53,15 @@
             }
         }
 
-        .empty {
-            font-size: 10px;
+        .main-value {
+            .font-kitab{
+                font-size: 18px;
+            }
+            .empty {
+                font-size: 10px;
+            }
         }
+
     }
 
     .btn-up, .btn-down, .btn-left, .btn-right {
