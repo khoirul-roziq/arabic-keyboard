@@ -1,5 +1,8 @@
-const keyboard = (req, res) => {
-  res.render("keyboard");
+const Button = require("../models/button");
+
+const keyboard = async (req, res) => {
+  const buttons = await Button.find().populate('arabic').exec();
+  res.render("keyboard", {buttons});
 };
 
 module.exports = { keyboard };

@@ -1,8 +1,9 @@
 const Button = require("../models/button");
+const Arabic = require("../models/arabic");
 
 const list = async (req, res) => {
   try {
-    const buttonData = await Button.find();
+    const buttonData = await Button.find().populate('arabic').exec();
     res.render("button-list", { buttonData });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -41,7 +42,7 @@ const storeMultiple = async (req, res) => {
         await newButtonData.save();
       }
     }
-    res.render("/button");
+    res.redirect("/button");
   } catch (error) {
     // Menangani kesalahan jika terjadi saat penyimpanan data
     console.error(error);
@@ -53,7 +54,8 @@ const edit = async (req, res) => {
   try {
     const id = req.params.id;
     const buttonData = await Button.findById(id);
-    res.render("button-edit", { buttonData });
+    const arabicData = await Arabic.find();
+    res.render("button-edit", { buttonData, arabicData });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -62,19 +64,43 @@ const edit = async (req, res) => {
 const update = async (req, res) => {
   try {
     const id = req.params.id;
-    const buttonData = await Button.findByIdAndUpdate(id, req.body, {
-      runValidators: true,
-    });
+
+    // Mendapatkan data yang diperbarui dari request body
+    const updatedData = req.body;
+
+    updatedData.arabic = req.body.arabicId;
+
+    // Lakukan pencarian dan perbarui dokumen Button
+    const buttonData = await Button.findByIdAndUpdate(
+      id,
+      updatedData,
+      {
+        runValidators: true,
+        new: true, // Mengembalikan dokumen yang diperbarui
+      }
+    );
     res.redirect("/button");
   } catch (error) {
+    console.error("Error updating button:", error);
     res.status(500).json({ error: error.message });
   }
 };
+
 
 const getAllButtons = async (req, res) => {
   try {
     const buttons = await Button.find();
     res.status(200).json(buttons);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+const drop = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const buttonData = await Button.findByIdAndDelete(id);
+    res.redirect("/button");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -87,4 +113,5 @@ module.exports = {
   edit,
   update,
   getAllButtons,
+  drop,
 };

@@ -1,24 +1,34 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/css/arabic-fonts.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Edit Data Button</h1>
+    <form action="/button/<%= buttonData.id %>?_method=PUT" method="post">
+      <input class="form-control mt-4" type="text" placeholder="Nama Button" name="name" value="<%= buttonData.name %>">
+      <input class="form-control mt-4" type="text" placeholder="Key" name="key" value="<%= buttonData.key %>">
+      <input class="form-control mt-4" type="text" placeholder="Code" name="Code" value="<%= buttonData.code %>">
+      <select name="arabicId" id="arabicId" class="form-select mt-4">
+        <% arabicData.forEach((arabic) => { %>
+          <option value="<%= arabic.id %>"><%= eval('"' + arabic.unicode + '"') %> (<%= arabic.name %>)</option>
+        <% }) %>
+      </select>
       
-      <div class="container">
-        <h1>Edit Data Button</h1>
-        <form action="/button/<%= buttonData.id %>?_method=PUT" method="post">
-            <input class="form-control mt-4" type="text" placeholder="Nama Button" name="name" value="<%= buttonData.name %>">
-            <input class="form-control mt-4" type="text" placeholder="Key" name="key" value="<%= buttonData.key %>" disabled>
-            <input class="form-control mt-4" type="text" placeholder="Code" name="Code" value="<%= buttonData.code %>" disabled>
-            <button type="submit" class="btn btn-primary mt-4">Submit</button>
-        </form>
-    </div>
+      <button type="submit" class="btn btn-primary mt-4">Submit</button>
+    </form>
+  </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
 </html>

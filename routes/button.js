@@ -7,7 +7,8 @@ const {
   storeMultiple,
   edit,
   update,
-  getAllButtons
+  getAllButtons,
+  drop
 } = require("../controllers/buttonController");
 
 router.get("/", list);
@@ -16,5 +17,6 @@ router.post("/store/multiple", storeMultiple)
 router.get("/:id/edit", edit)
 router.put("/:id", update)
 router.get("/get/all", getAllButtons)
+router.delete("/:id", drop)
 
 module.exports = router;
