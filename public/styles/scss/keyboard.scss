@@ -30,6 +30,13 @@
         }
 
         &:active {
+            background-image: linear-gradient(#094452,#020112);
+            scale: 0.95;
+            box-shadow: 1px 1px 1px 1px rgba($color: #000000, $alpha: 0.5);
+        }
+
+        &.btn-keydown {
+            background-image: linear-gradient(#094452,#020112);
             scale: 0.95;
             box-shadow: 1px 1px 1px 1px rgba($color: #000000, $alpha: 0.5);
         }
@@ -64,9 +71,7 @@
 
     }
 
-    .btn-up, .btn-down, .btn-left, .btn-right {
-        background-image: linear-gradient(#094452,#020112);
-    }
+    
 
     .btn-bt {
         grid-area: bt;

@@ -23,6 +23,12 @@
   cursor: pointer;
 }
 .keyboard .key:active {
+  background-image: linear-gradient(#094452, #020112);
+  scale: 0.95;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.keyboard .key.btn-keydown {
+  background-image: linear-gradient(#094452, #020112);
   scale: 0.95;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
@@ -48,9 +54,6 @@
 }
 .keyboard .key .main-value .empty {
   font-size: 10px;
-}
-.keyboard .btn-up, .keyboard .btn-down, .keyboard .btn-left, .keyboard .btn-right {
-  background-image: linear-gradient(#094452, #020112);
 }
 .keyboard .btn-bt {
   grid-area: bt;

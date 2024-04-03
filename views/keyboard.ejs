@@ -102,6 +102,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', async function() {
+
       const dataKeyButton = await fetchButtonData();
 
       dataKeyButton.forEach(element => {
@@ -429,13 +430,85 @@
           singleValueKeyButton("btn-ralt", element.key)
         } else if (element.code === "AltLeft") {
           singleValueKeyButton("btn-lalt", element.key)
-        }else if (element.key === "Meta") {
+        } else if (element.key === "Meta") {
           singleValueKeyButton("btn-win", element.key)
-        }else if (element.key === "PrintScreen") {
+        } else if (element.key === "PrintScreen") {
           singleValueKeyButton("btn-psc", element.key)
         }
-        
+
       });
+    });
+
+    function clickProcess(btnKey, btnClass) {
+      if (event.key === btnKey) {
+        event.preventDefault(); // Prevent default behavior
+        const keyElement = document.querySelector(`.${btnClass}`);
+        if (keyElement) {
+          keyElement.classList.add('btn-keydown');
+          // Function to handle keyup event
+          document.addEventListener('keyup', function(event) {
+            keyElement.classList.remove('btn-keydown');
+          });
+        }
+      }
+    }
+
+    const buttonAlias = {
+      "1": "btn-n1",
+      "2": "btn-n2",
+      "3": "btn-n3",
+      "4": "btn-n4",
+      "5": "btn-n5",
+      "6": "btn-n6",
+      "7": "btn-n7",
+      "8": "btn-n8",
+      "9": "btn-n9",
+      "0": "btn-n0",
+      "q": "btn-q",
+      "w": "btn-w",
+      "e": "btn-e",
+      "r": "btn-r",
+      "t": "btn-t",
+      "y": "btn-y",
+      "u": "btn-u",
+      "i": "btn-i",
+      "o": "btn-o",
+      "p": "btn-p",
+      "a": "btn-a",
+      "s": "btn-s",
+      "d": "btn-d",
+      "f": "btn-f",
+      "g": "btn-g",
+      "h": "btn-h",
+      "j": "btn-j",
+      "k": "btn-k",
+      "l": "btn-l",
+      "z": "btn-z",
+      "x": "btn-x",
+      "c": "btn-c",
+      "v": "btn-v",
+      "b": "btn-b",
+      "n": "btn-n",
+      "m": "btn-m",
+      "`": "btn-bt",
+      "-": "btn-min",
+      "=": "btn-es",
+      "[": "btn-lsb",
+      "]": "btn-rsb",
+      ";": "btn-sc",
+      "'": "btn-sq",
+      "\\": "btn-bsl",
+      ",": "btn-comma",
+      ".": "btn-dot",
+      "/": "btn-sl",
+    }
+
+    // Function to handle keydown event
+    document.addEventListener('keydown', function(event) {
+      for (const [key, value] of Object.entries(buttonAlias)) {
+        clickProcess(key, value);
+      }
+
     });
   </script>
 </body>
