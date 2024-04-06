@@ -18,6 +18,7 @@
       <input class="form-control mt-4" type="text" placeholder="Key" name="key" value="<%= buttonData.key %>">
       <input class="form-control mt-4" type="text" placeholder="Code" name="Code" value="<%= buttonData.code %>">
       <select name="arabicId" id="arabicId" class="form-select mt-4">
+        <option value="" selected>-- Pilih karakter arab --</option>
         <% arabicData.forEach((arabic) => { %>
           <option value="<%= arabic.id %>"><%= eval('"' + arabic.unicode + '"') %> (<%= arabic.name %>)</option>
         <% }) %>

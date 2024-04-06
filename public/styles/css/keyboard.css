@@ -4,7 +4,7 @@
   margin-right: auto;
   display: grid;
   grid-template-columns: repeat(34, 1fr);
-  grid-template-areas: "bt bt n1 n1 n2 n2 n3 n3 n4 n4 n5 n5 n6 n6 n7 n7 n8 n8 n9 n9 n0 n0 min min es es bs bs bs bs dlt dlt dlt dlt" "tab tab tab q q w w e e r r t t y y u u i i o o p p lsb lsb rsb rsb rsb enter enter enter pu pu pu" "cl cl cl cl a a s s d d f f g g h h j j k k l l sc sc sq sq bsl bsl enter enter enter pd pd pd" "ls ls ls ls ls z z x x c c v v b b n n m m comma comma dot dot sl sl rs rs rs home home up up end end" "fn fn lctrl lctrl win win lalt lalt spc spc spc spc spc spc spc spc spc spc ralt ralt psc psc psc psc rctrl rctrl rctrl rctrl left left down down right right";
+  grid-template-areas: "bt bt n1 n1 n2 n2 n3 n3 n4 n4 n5 n5 n6 n6 n7 n7 n8 n8 n9 n9 n0 n0 min min es es bs bs bs bs dlt dlt dlt dlt" "tab tab tab q q w w e e r r t t y y u u i i o o p p lsb lsb rsb rsb rsb enter enter enter pu pu pu" "cl cl cl cl a a s s d d f f g g h h j j k k l l sc sc sq sq bsl bsl enter enter enter pd pd pd" "ls ls ls ls ls z z x x c c v v b b n n m m comma comma dot dot sl sl rs rs rs home home up up end end" "fn fn lctrl lctrl win win lalt lalt spc spc spc spc spc spc spc spc spc spc ralt ralt in in esc esc rctrl rctrl rctrl rctrl left left down down right right";
   gap: 0.3rem;
 }
 .keyboard .key {
@@ -13,10 +13,10 @@
   align-items: center;
   background-image: linear-gradient(#444444, #0e0e0e);
   color: white;
-  height: 3rem;
+  height: 3.2rem;
   border-radius: 5px;
   flex-direction: column;
-  transition: 0.1s;
+  transition: 20ms;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 .keyboard .key:hover {
@@ -49,11 +49,9 @@
   font-size: 14px;
   color: #909090;
 }
-.keyboard .key .main-value .font-kitab {
-  font-size: 18px;
-}
-.keyboard .key .main-value .empty {
-  font-size: 10px;
+.keyboard .key .main-value.font-kitab {
+  font-size: 25px;
+  margin-top: -10px;
 }
 .keyboard .btn-bt {
   grid-area: bt;
@@ -141,7 +139,7 @@
 }
 .keyboard .btn-enter {
   grid-area: enter;
-  height: 6.3rem;
+  height: 6.6rem;
 }
 .keyboard .btn-pu {
   grid-area: pu;
@@ -251,8 +249,11 @@
 .keyboard .btn-ralt {
   grid-area: ralt;
 }
-.keyboard .btn-psc {
-  grid-area: psc;
+.keyboard .btn-in {
+  grid-area: in;
+}
+.keyboard .btn-esc {
+  grid-area: esc;
 }
 .keyboard .btn-rctrl {
   grid-area: rctrl;

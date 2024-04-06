@@ -9,7 +9,7 @@
         "tab tab tab q q w w e e r r t t y y u u i i o o p p lsb lsb rsb rsb rsb enter enter enter pu pu pu"
         "cl cl cl cl a a s s d d f f g g h h j j k k l l sc sc sq sq bsl bsl enter enter enter pd pd pd"
         "ls ls ls ls ls z z x x c c v v b b n n m m comma comma dot dot sl sl rs rs rs home home up up end end"
-        "fn fn lctrl lctrl win win lalt lalt spc spc spc spc spc spc spc spc spc spc ralt ralt psc psc psc psc rctrl rctrl rctrl rctrl left left down down right right";
+        "fn fn lctrl lctrl win win lalt lalt spc spc spc spc spc spc spc spc spc spc ralt ralt in in esc esc rctrl rctrl rctrl rctrl left left down down right right";
 
     gap: 0.3rem;
     
@@ -19,10 +19,10 @@
         align-items: center;
         background-image: linear-gradient(#444444, #0e0e0e); 
         color: white;
-        height: 3rem;
+        height: 3.2rem;
         border-radius: 5px;
         flex-direction: column;
-        transition: 0.1s;
+        transition: 20ms;
         box-shadow: 1px 1px 1px 1px rgba($color: #000000, $alpha: 0.8);
 
         &:hover {
@@ -61,17 +61,14 @@
         }
 
         .main-value {
-            .font-kitab{
-                font-size: 18px;
+            &.font-kitab{
+                font-size: 25px;
+                margin-top: -10px;
             }
-            .empty {
-                font-size: 10px;
-            }
+            
         }
 
     }
-
-    
 
     .btn-bt {
         grid-area: bt;
@@ -187,7 +184,7 @@
 
     .btn-enter {
         grid-area: enter;
-        height: 6.3rem;
+        height: 6.6rem;
     }
 
     .btn-pu {
@@ -334,8 +331,11 @@
         grid-area: ralt;
     }
 
-    .btn-psc {
-        grid-area: psc;
+    .btn-in {
+        grid-area: in;
+    }
+    .btn-esc {
+        grid-area: esc;
     }
 
     .btn-rctrl {
