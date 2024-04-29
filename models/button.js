@@ -8,6 +8,10 @@ const formSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: "Arabic",
   },
+  arabicSecond: {
+    type: mongoose.Types.ObjectId,
+    ref: "Arabic",
+  },
 });
 
 const Button = mongoose.model("Button", formSchema);

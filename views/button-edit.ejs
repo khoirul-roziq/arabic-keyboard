@@ -17,13 +17,19 @@
       <input class="form-control mt-4" type="text" placeholder="Nama Button" name="name" value="<%= buttonData.name %>">
       <input class="form-control mt-4" type="text" placeholder="Key" name="key" value="<%= buttonData.key %>">
       <input class="form-control mt-4" type="text" placeholder="Code" name="Code" value="<%= buttonData.code %>">
-      <select name="arabicId" id="arabicId" class="form-select mt-4">
-        <option value="" selected>-- Pilih karakter arab --</option>
+      <select name="arabicId" class="form-select mt-4">
+        <option value="" selected>-- Pilih karakter arab pertama --</option>
         <% arabicData.forEach((arabic) => { %>
-          <option value="<%= arabic.id %>"><%= eval('"' + arabic.unicode + '"') %> (<%= arabic.name %>)</option>
+        <option value="<%= arabic.id %>" <% if(buttonData.arabic)if(buttonData.arabic.id === arabic.id) {%> selected <% } %>><%= eval('"' + arabic.unicode + '"') %> (<%= arabic.name %>)</option>
         <% }) %>
       </select>
-      
+      <select name="arabicIdSecond" class="form-select mt-4">
+        <option value="" selected>-- Pilih karakter arab kedua --</option>
+        <% arabicData.forEach((arabic) => { %>
+        <option value="<%= arabic.id %>" <% if(buttonData.arabicSecond)if(buttonData.arabicSecond.id === arabic.id) {%> selected <% } %>><%= eval('"' + arabic.unicode + '"') %> (<%= arabic.name %>)</option>
+        <% }) %>
+      </select>
+
       <button type="submit" class="btn btn-primary mt-4">Submit</button>
     </form>
   </div>

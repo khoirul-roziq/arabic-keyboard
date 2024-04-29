@@ -17,7 +17,7 @@ async function fetchButtonData() {
 }
 
 // Function to generate the keyboard element
-function multiValueKeyButton(classBtn, indicatorValue, mainValue) {
+function multiValueKeyButton(classBtn, indicatorValue, arabicData) {
   // Get the reference to the keyboard div
   var keyboardDiv = document.getElementById("keyboard");
 
@@ -35,19 +35,25 @@ function multiValueKeyButton(classBtn, indicatorValue, mainValue) {
   indicatorSpan.textContent = indicatorValue;
 
   // Create span for second value
-  // var secondValueSpan = document.createElement("span");
-  // secondValueSpan.classList.add("second-value");
-  // secondValueSpan.textContent = "ظ";
+  if (arabicData.arabicSecond) {
+    var secondValueSpan = document.createElement("span");
+    secondValueSpan.classList.add("second-value");
+    secondValueSpan.textContent = eval(
+      '"' + arabicData.arabicSecond.unicode + '"'
+    );
+  }
 
   // Append indicator and second value spans to key-info div
   keyInfoDiv.appendChild(indicatorSpan);
-  // keyInfoDiv.appendChild(secondValueSpan);
+  if (arabicData.arabicSecond) {
+    keyInfoDiv.appendChild(secondValueSpan);
+  }
 
   // Create main-value div
   var mainValueDiv = document.createElement("div");
-  if (mainValue) {
+  if (arabicData.arabic) {
     mainValueDiv.classList.add("main-value", "font-kitab");
-    mainValueDiv.textContent = eval('"' + mainValue + '"');
+    mainValueDiv.textContent = eval('"' + arabicData.arabic.unicode + '"');
   } else {
     mainValueDiv.classList.add("main-value");
     mainValueDiv.textContent = "";
@@ -82,292 +88,102 @@ function singleValueKeyButton(classBtn, mainValue) {
   keyboardDiv.appendChild(keyDiv);
 }
 
-document.addEventListener("DOMContentLoaded", async function () {
-  const dataKeyButton = await fetchButtonData();
-
-  dataKeyButton.forEach((element) => {
+function generateValueButton() {
+  buttonData.forEach((element) => {
     if (element.key === "1") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-n1", 1, element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-n1", 1, null);
-      }
+      multiValueKeyButton("btn-n1", 1, element);
     } else if (element.key === "2") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-n2", 2, element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-n2", 2, null);
-      }
+      multiValueKeyButton("btn-n2", 2, element);
     } else if (element.key === "3") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-n3", 3, element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-n3", 3);
-      }
+      multiValueKeyButton("btn-n3", 3, element);
     } else if (element.key === "4") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-n4", 4, element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-n4", 4);
-      }
+      multiValueKeyButton("btn-n4", 4, element);
     } else if (element.key === "5") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-n5", 5, element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-n5", 5);
-      }
+      multiValueKeyButton("btn-n5", 5, element);
     } else if (element.key === "6") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-n6", 6, element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-n6", 6);
-      }
+      multiValueKeyButton("btn-n6", 6, element);
     } else if (element.key === "7") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-n7", 7, element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-n7", 7);
-      }
+      multiValueKeyButton("btn-n7", 7, element);
     } else if (element.key === "8") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-n8", 8, element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-n8", 8);
-      }
+      multiValueKeyButton("btn-n8", 8, element);
     } else if (element.key === "9") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-n9", 9, element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-n9", 9);
-      }
+      multiValueKeyButton("btn-n9", 9, element);
     } else if (element.key === "0") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-n0", 0, element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-n0", 0);
-      }
+      multiValueKeyButton("btn-n0", 0, element);
     } else if (element.key === "q") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-q", "q", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-q", "q");
-      }
+      multiValueKeyButton("btn-q", "q", element);
     } else if (element.key === "w") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-w", "w", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-w", "w");
-      }
+      multiValueKeyButton("btn-w", "w", element);
     } else if (element.key === "e") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-e", "e", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-e", "e");
-      }
+      multiValueKeyButton("btn-e", "e", element);
     } else if (element.key === "r") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-r", "r", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-r", "r");
-      }
+      multiValueKeyButton("btn-r", "r", element);
     } else if (element.key === "t") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-t", "t", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-t", "t");
-      }
+      multiValueKeyButton("btn-t", "t", element);
     } else if (element.key === "y") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-y", "y", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-y", "y");
-      }
+      multiValueKeyButton("btn-y", "y", element);
     } else if (element.key === "u") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-u", "u", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-u", "u");
-      }
+      multiValueKeyButton("btn-u", "u", element);
     } else if (element.key === "i") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-i", "i", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-i", "i");
-      }
+      multiValueKeyButton("btn-i", "i", element);
     } else if (element.key === "o") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-o", "o", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-o", "o");
-      }
+      multiValueKeyButton("btn-o", "o", element);
     } else if (element.key === "p") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-p", "p", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-p", "p");
-      }
+      multiValueKeyButton("btn-p", "p", element);
     } else if (element.key === "[") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-lsb", "[", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-lsb", "[");
-      }
+      multiValueKeyButton("btn-lsb", "[", element);
     } else if (element.key === "]") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-rsb", "]", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-rsb", "]");
-      }
+      multiValueKeyButton("btn-rsb", "]", element);
     } else if (element.key === "a") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-a", "a", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-a", "a");
-      }
+      multiValueKeyButton("btn-a", "a", element);
     } else if (element.key === "s") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-s", "s", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-s", "s");
-      }
+      multiValueKeyButton("btn-s", "s", element);
     } else if (element.key === "d") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-d", "d", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-d", "d");
-      }
+      multiValueKeyButton("btn-d", "d", element);
     } else if (element.key === "f") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-f", "f", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-f", "f");
-      }
+      multiValueKeyButton("btn-f", "f", element);
     } else if (element.key === "g") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-g", "g", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-g", "g");
-      }
+      multiValueKeyButton("btn-g", "g", element);
     } else if (element.key === "h") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-h", "h", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-h", "h");
-      }
+      multiValueKeyButton("btn-h", "h", element);
     } else if (element.key === "j") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-j", "j", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-j", "j");
-      }
+      multiValueKeyButton("btn-j", "j", element);
     } else if (element.key === "k") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-k", "k", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-k", "k");
-      }
+      multiValueKeyButton("btn-k", "k", element);
     } else if (element.key === "l") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-l", "l", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-l", "l");
-      }
+      multiValueKeyButton("btn-l", "l", element);
     } else if (element.key === ";") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-sc", ";", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-sc", ";");
-      }
+      multiValueKeyButton("btn-sc", ";", element);
     } else if (element.key === "'") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-sq", "'", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-sq", "'");
-      }
+      multiValueKeyButton("btn-sq", "'", element);
     } else if (element.key === "\\") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-bsl", "\\", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-bsl", "\\");
-      }
+      multiValueKeyButton("btn-bsl", "\\", element);
     } else if (element.key === "z") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-z", "z", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-z", "z");
-      }
+      multiValueKeyButton("btn-z", "z", element);
     } else if (element.key === "x") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-x", "x", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-x", "x");
-      }
+      multiValueKeyButton("btn-x", "x", element);
     } else if (element.key === "c") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-c", "c", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-c", "c");
-      }
+      multiValueKeyButton("btn-c", "c", element);
     } else if (element.key === "v") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-v", "a", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-v", "v");
-      }
+      multiValueKeyButton("btn-v", "a", element);
     } else if (element.key === "b") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-b", "b", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-b", "b");
-      }
+      multiValueKeyButton("btn-b", "b", element);
     } else if (element.key === "n") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-n", "n", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-n", "n");
-      }
+      multiValueKeyButton("btn-n", "n", element);
     } else if (element.key === "m") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-m", "m", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-m", "m");
-      }
+      multiValueKeyButton("btn-m", "m", element);
     } else if (element.key === ",") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-comma", ",", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-comma", ",");
-      }
+      multiValueKeyButton("btn-comma", ",", element);
     } else if (element.key === ".") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-dot", ".", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-dot", ".");
-      }
+      multiValueKeyButton("btn-dot", ".", element);
     } else if (element.key === "/") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-sl", "/", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-sl", "/");
-      }
+      multiValueKeyButton("btn-sl", "/", element);
     } else if (element.key === "`") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-bt", "`", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-bt", "`");
-      }
+      multiValueKeyButton("btn-bt", "`", element);
     } else if (element.key === "-") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-min", "-", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-min", "-");
-      }
+      multiValueKeyButton("btn-min", "-", element);
     } else if (element.key === "=") {
-      if (element.arabic) {
-        multiValueKeyButton("btn-es", "=", element.arabic.unicode);
-      } else {
-        multiValueKeyButton("btn-es", "=");
-      }
+      multiValueKeyButton("btn-es", "=", element);
     } else if (element.code === "Space") {
       singleValueKeyButton("btn-spc", element.code);
     } else if (element.key === "Backspace") {
@@ -418,7 +234,14 @@ document.addEventListener("DOMContentLoaded", async function () {
       singleValueKeyButton("btn-esc", "Esc");
     }
   });
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+  await fetchButtonData();
+  generateValueButton();
 });
+
+
 
 function clickProcess(btnKey, btnClass) {
   let eventParam;
@@ -449,7 +272,7 @@ function clickProcess(btnKey, btnClass) {
       let valueKey = "";
 
       if (eventParam === "Space") {
-        valueKey = "\\u0020"
+        valueKey = "\\u0020";
       } else {
         buttonData.forEach((data) => {
           if (data.key === event.key) {
@@ -459,12 +282,16 @@ function clickProcess(btnKey, btnClass) {
           }
         });
       }
-      
+
       const mergedText = unicodeTemp + valueKey;
-      unicodeTemp = mergedText
+      unicodeTemp = mergedText;
+
+      if(eventParam === "Backspace") {
+        unicodeTemp = unicodeTemp.slice(0, -6);
+      }
 
       // Kembalikan teks yang telah digabungkan ke dalam panel
-      document.getElementById("panel").innerText = eval('"' + mergedText + '"')
+      document.getElementById("panel").innerText = eval('"' + unicodeTemp + '"');
     }
   }
 }
@@ -542,9 +369,34 @@ const buttonAlias = {
   CapsLock: "btn-cl",
 };
 
-// Function to handle keydown event
+function switchValueButon(btnClass) {
+  const mainValue = document.querySelector(`#keyboard  .key.${btnClass} .main-value`)
+  const secondValue = document.querySelector(`#keyboard  .key.${btnClass} .key-info .second-value`)
+  
+  let tempValue = mainValue.textContent
+  mainValue.textContent = secondValue.textContent
+  secondValue.textContent = tempValue
+}
+
+// Array untuk menyimpan daftar tombol yang ingin diubah nilainya saat tombol "Shift" ditekan
+const buttonsToSwitch = ["btn-n1", "btn-n2", "btn-n3", "btn-n4", "btn-n5", "btn-n6", "btn-n7", "btn-n8"];
+
+// Function untuk menangani keydown event
 document.addEventListener("keydown", function (event) {
   for (const [key, value] of Object.entries(buttonAlias)) {
     clickProcess(key, value);
+  }
+
+  // Jika tombol "Shift" ditekan, ubah nilainya untuk tombol yang ada dalam array
+  if (event.key === "Shift") {
+    buttonsToSwitch.forEach(button => switchValueButon(button));
+  }
+});
+
+// Function untuk menangani keyup event
+document.addEventListener("keyup", function (event) {
+  // Jika tombol "Shift" dilepas, kembalikan nilainya untuk tombol yang ada dalam array
+  if (event.key === "Shift") {
+    buttonsToSwitch.forEach(button => switchValueButon(button));
   }
 });

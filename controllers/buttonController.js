@@ -3,7 +3,7 @@ const Arabic = require("../models/arabic");
 
 const list = async (req, res) => {
   try {
-    const buttonData = await Button.find().populate('arabic').exec();
+    const buttonData = await Button.find().populate(['arabic','arabicSecond']).exec();
     res.render("button-list", { buttonData });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -53,8 +53,11 @@ const storeMultiple = async (req, res) => {
 const edit = async (req, res) => {
   try {
     const id = req.params.id;
-    const buttonData = await Button.findById(id);
+    const buttonData = await Button.findById(id).populate(['arabic','arabicSecond']).exec();
     const arabicData = await Arabic.find();
+
+    console.log(buttonData)
+
     res.render("button-edit", { buttonData, arabicData });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -69,6 +72,7 @@ const update = async (req, res) => {
     const updatedData = req.body;
 
     updatedData.arabic = req.body.arabicId;
+    updatedData.arabicSecond = req.body.arabicIdSecond;
 
     // Lakukan pencarian dan perbarui dokumen Button
     const buttonData = await Button.findByIdAndUpdate(
@@ -89,7 +93,7 @@ const update = async (req, res) => {
 
 const getAllButtons = async (req, res) => {
   try {
-    const buttons = await Button.find().populate('arabic').exec();
+    const buttons = await Button.find().populate(['arabic','arabicSecond']).exec();
     res.status(200).json(buttons);
   } catch (error) {
     res.status(500).json({ error: error.message });

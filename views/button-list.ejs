@@ -24,6 +24,7 @@
           <th scope="col">Key</th>
           <th scope="col">Code</th>
           <th scope="col">Arabic</th>
+          <th scope="col">Arabic Sec</th>
           <th scope="col">Aksi</th>
         </tr>
       </thead>
@@ -38,8 +39,14 @@
             <% if (item.arabic) { %>
             <span class="font-kitab fs-2"><%= eval('"' + item.arabic.unicode + '"') %></span>
             <% } else { %>
-            No Arabic Data
+            Empty
             <% } %></td>
+            <td class="pt-3">
+              <% if (item.arabicSecond) { %>
+              <span class="font-kitab fs-2"><%= eval('"' + item.arabicSecond.unicode + '"') %></span>
+              <% } else { %>
+              Empty
+              <% } %></td>
           <td>
             <a href="/button/<%= item.id %>/show">Detail</a>
             <a href="/button/<%= item.id %>/edit">Edit</a>
